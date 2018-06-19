@@ -5,6 +5,7 @@ import {select} from 'd3-selection'
 import {doTerrain, drawLabels, drawPaths, TerrainParams, visualizeCities, visualizeSlopes, visualizeTerrain, visualizeVoronoi} from './terrain.js'
 
 /**
+ * @FIXME Fix side effect on Show Regions button after using flatqueue.
  * @TODO Import only d3 features that are needed.
  * @TODO City name change at each show/hide cities.
  * @TODO City name change at each show/hide regions.

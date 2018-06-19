@@ -1263,21 +1263,6 @@ export function doMap(svg, params) {
   drawMap(svg, render);
 }
 
-export var defaultParams = {
-  extent: defaultExtent,
-  generator: generateCoast,
-  npts: 16384,
-  //npts: 32768,
-  //npts: 65536,
-  ncities: 15,
-  nterrs: 5,
-  fontsizes: {
-    region: 40,
-    city: 25,
-    town: 20
-  }
-}
-
 ////////////////////////////////////////////////////////////////////////////////////
 //////////                    END OF ORIGINAL CODE                   ///////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -1285,13 +1270,13 @@ export var defaultParams = {
 export function generateTerrain(params) {
   var mesh = generateGoodMesh(params.npts, params.extent);
   var h = add(
-    //slope(mesh, randomVector(4)),
+    // slope(mesh, randomVector(2)),
     cone(mesh, -1),
-    //pike(mesh, 2),
+    // pike(mesh, 2),
     mountainsCentered(mesh, 50, 0.80),
-    //mountains(mesh, 50),
-    //forceBorders(mesh, 10),
-    //sinks(mesh, 50),
+    // mountains(mesh, 50, 0.02),
+    // forceBorders(mesh, 10),
+    // sinks(mesh, 50),
   );
 
   for (var i = 0; i < 10; i++) {
@@ -1326,9 +1311,9 @@ export function drawTerrain(svg, render) {
 export var TerrainParams = {
   extent: defaultExtent,
   generator: generateTerrain,
-  npts: 16384, // 4096, 8192, 32768, 65536,
-  ncities: 15,
-  nterrs: 5,
+  npts: 4096, // 8192, 16384, 32768, 65536,
+  ncities: 10,
+  nterrs: 3,
   fontsizes: {
     region: 40,
     city: 25,
