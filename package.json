@@ -13,9 +13,10 @@
     "parcel-plugin-bundle-manifest": "^0.1.2"
   },
   "scripts": {
-    "test": "npx parcel index.html --log-level 3",
+    "full": "npm start -- --no-cache --no-minify",
     "start": "npx parcel build index.html --detailed-report --public-url ./",
-    "full": "npx parcel build index.html --detailed-report --public-url ./ --no-cache --no-minify"
+    "stop": "rm -rf .cache && rm -rf dist",
+    "test": "npx parcel index.html --log-level 3"
   },
   "repository": {
     "type": "git",
