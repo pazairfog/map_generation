@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "npx parcel index.html --log-level 3",
-    "start": "npx parcel build index.html --detailed-report"
+    "start": "npx parcel build index.html --detailed-report --public-url ./"
   },
   "repository": {
     "type": "git",
